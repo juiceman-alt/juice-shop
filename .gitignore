@@ -7,7 +7,8 @@ app/
 uploads/complaints/*.*
 !uploads/complaints/.gitkeep
 ftp/legal.md
-package-lock.json
+# Lockfiles are committed in this fork so Semgrep Supply Chain can build an
+# exact dependency inventory for the AppSec remediation lab.
 i18n/*.json
 i18n/*.invalid
 !frontend/src/assets/i18n/*.json
