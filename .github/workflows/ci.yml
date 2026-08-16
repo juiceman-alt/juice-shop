@@ -110,9 +110,10 @@ jobs:
             package-lock.json
             frontend/package-lock.json
 
-      - name: Install locked dependencies
+      - name: Install locked dependencies required by API tests
         run: |
-          npm ci --ignore-scripts --no-audit --no-fund
+          # The API tests need sqlite3's install script to build its native binding.
+          npm ci --no-audit --no-fund
           npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
 
       - name: Build application
